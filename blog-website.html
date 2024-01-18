@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Blog Title</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f9f7f7; /* Light background color */
+            background-image: url('https://www.transparenttextures.com/patterns/asfalt-light.png'); /* Subtle background pattern */
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        nav {
+            background-color: #555;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            margin: 5px;
+            display: inline-block;
+            transition: background-color 0.3s;
+            border-radius: 5px;
+        }
+
+        nav a:hover {
+            background-color: #777;
+        }
+
+        section {
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        article {
+            background-color: white;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            perspective: 1000px; /* Enable 3D transforms */
+        }
+
+        article:hover {
+            transform: scale(1.05) rotateY(5deg);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+
+        article img {
+            width: 100%;
+            height: auto;
+            border-bottom: 2px solid #ddd; /* Light border under the image */
+        }
+
+        article h2 {
+            background-color: #333;
+            color: white;
+            padding: 15px;
+            margin: 0;
+            font-size: 1.5em;
+        }
+
+        article p {
+            padding: 15px;
+            margin: 0;
+        }
+
+        article a {
+            display: block;
+            background-color: #555;
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            text-align: center;
+            border-top: 2px solid #333; /* Dark border on top of the button */
+            transition: background-color 0.3s;
+        }
+
+        article a:hover {
+            background-color: #777;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Your Blog Title</h1>
+    </header>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+    </nav>
+
+    <section>
+        <article>
+            <h2>Blog Post Title 1</h2>
+            <p>Published on January 1, 2024</p>
+            <img src="https://via.placeholder.com/800x400" alt="Blog Post Image">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Vivamus eu efficitur neque. Sed vel tristique ligula. Proin bibendum lacus sit amet scelerisque suscipit.</p>
+            <a href="#">Read more</a>
+        </article>
+
+        <article>
+            <h2>Blog Post Title 2</h2>
+            <p>Published on January 5, 2024</p>
+            <img src="https://via.placeholder.com/800x400" alt="Blog Post Image">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Vivamus eu efficitur neque. Sed vel tristique ligula. Proin bibendum lacus sit amet scelerisque suscipit.</p>
+            <a href="#">Read more</a>
+        </article>
+
+        <article>
+            <h2>Blog Post Title 3</h2>
+            <p>Published on January 10, 2024</p>
+            <img src="https://via.placeholder.com/800x400" alt="Blog Post Image">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Vivamus eu efficitur neque. Sed vel tristique ligula. Proin bibendum lacus sit amet scelerisque suscipit.</p>
+            <a href="#">Read more</a>
+        </article>
+
+        <article>
+            <h2>Blog Post Title 4</h2>
+            <p>Published on January 15, 2024</p>
+            <img src="https://via.placeholder.com/800x400" alt="Blog Post Image">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Vivamus eu efficitur neque. Sed vel tristique ligula. Proin bibendum lacus sit amet scelerisque suscipit.</p>
+            <a href="#">Read more</a>
+        </article>
+    </section>
+
+    <footer>
+        &copy; 2024 Your Blog. All rights reserved.
+    </footer>
+
+</body>
+</html>
