@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        #weatherContainer {
+            text-align: center;
+            padding: 20px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #cityInput {
+            margin-bottom: 10px;
+            padding: 8px;
+            font-size: 16px;
+        }
+
+        #getWeatherBtn {
+            padding: 10px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        #weatherInfo {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="weatherContainer">
+        <label for="cityInput">Enter City:</label>
+        <input type="text" id="cityInput" placeholder="City">
+        <button id="getWeatherBtn" onclick="getWeather()">Get Weather</button>
+
+        <div id="weatherInfo"></div>
+    </div>
+
+    <script>
+        async function getWeather() {
+            var cityInput = document.getElementById("cityInput").value;
+            var weatherInfo = document.getElementById("weatherInfo");
+
+            // Replace 'YOUR_API_KEY' with your actual API key from OpenWeatherMap
+            var apiKey = 'YOUR_API_KEY';
+
+            var apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityInput}&appid=${apiKey}&units=metric`;
+
+            try {
+                var response = await fetch(apiUrl);
+                var data = await response.json();
+
+                if (response.ok) {
+                    var temperature = data.main.temp;
+                    var condition = data.weather[0].description;
+
+                    weatherInfo.textContent = `Weather for ${cityInput}: Temperature: ${temperature}°C, Condition: ${condition}`;
+                } else {
+                    weatherInfo.textContent = `Error: ${data.message}`;
+                }
+            } catch (error) {
+                console.error('Error fetching weather data:', error);
+                weatherInfo.textContent = 'Error fetching weather data. Please try again later.';
+            }
+        }
+    </script>
+
+</body>
+</html>
