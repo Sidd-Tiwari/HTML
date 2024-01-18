@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced To-Do List</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        #taskInput {
+            width: 60%;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 16px;
+        }
+
+        #addTaskBtn {
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        #taskList {
+            list-style-type: none;
+            padding: 0;
+            width: 60%;
+            margin: 0;
+        }
+
+        .taskItem {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 10px 0;
+            padding: 15px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .taskText {
+            flex-grow: 1;
+            margin-right: 10px;
+            font-size: 16px;
+        }
+
+        .removeTaskBtn, .completeTaskBtn {
+            padding: 8px;
+            font-size: 14px;
+            cursor: pointer;
+            border: none;
+            border-radius: 3px;
+        }
+
+        .removeTaskBtn {
+            background-color: #f44336;
+            color: white;
+            margin-left: 10px;
+        }
+
+        .completeTaskBtn {
+            background-color: #3498db;
+            color: white;
+        }
+
+        .dueDate {
+            font-size: 14px;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Enhanced To-Do List</h2>
+
+    <input type="text" id="taskInput" placeholder="Add a new task...">
+    <button id="addTaskBtn" onclick="addTask()">Add Task</button>
+
+    <ul id="taskList"></ul>
+
+    <script>
+        function addTask() {
+            var taskInput = document.getElementById("taskInput");
+            var taskList = document.getElementById("taskList");
+
+            if (taskInput.value.trim() !== "") {
+                var taskItem = document.createElement("li");
+                taskItem.className = "taskItem";
+
+                var taskText = document.createElement("span");
+                taskText.className = "taskText";
+                taskText.textContent = taskInput.value;
+
+                var dueDateInput = document.createElement("input");
+                dueDateInput.type = "date";
+                dueDateInput.className = "dueDate";
+
+                var completeTaskBtn = document.createElement("button");
+                completeTaskBtn.className = "completeTaskBtn";
+                completeTaskBtn.textContent = "Complete";
+                completeTaskBtn.onclick = function() {
+                    taskText.style.textDecoration = "line-through";
+                    completeTaskBtn.disabled = true;
+                    dueDateInput.disabled = true;
+                };
+
+                var removeTaskBtn = document.createElement("button");
+                removeTaskBtn.className = "removeTaskBtn";
+                removeTaskBtn.textContent = "Remove";
+                removeTaskBtn.onclick = function() {
+                    taskList.removeChild(taskItem);
+                };
+
+                taskItem.appendChild(taskText);
+                taskItem.appendChild(dueDateInput);
+                taskItem.appendChild(completeTaskBtn);
+                taskItem.appendChild(removeTaskBtn);
+
+                taskList.appendChild(taskItem);
+
+                taskInput.value = "";
+            }
+        }
+    </script>
+
+</body>
+</html>
