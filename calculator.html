@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Calculator</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        #calculator {
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+        }
+
+        input {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 10px;
+            font-size: 18px;
+        }
+
+        button {
+            width: 48px;
+            height: 48px;
+            margin: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+        }
+
+        button.operator {
+            background-color: #3498db;
+            color: white;
+        }
+
+        button.equal {
+            background-color: #2ecc71;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="calculator">
+        <input type="text" id="display" readonly>
+
+        <div>
+            <button onclick="appendToDisplay('(')">(</button>
+            <button onclick="appendToDisplay(')')">)</button>
+            <button onclick="appendToDisplay('1')">1</button>
+            <button onclick="appendToDisplay('2')">2</button>
+            <button onclick="appendToDisplay('3')">3</button>
+            <button class="operator" onclick="appendToDisplay('+')">+</button>
+            <button onclick="calculateSquare()">x²</button>
+            <button onclick="calculateSquareRoot()">√</button>
+        </div>
+
+        <div>
+            <button onclick="appendToDisplay('4')">4</button>
+            <button onclick="appendToDisplay('5')">5</button>
+            <button onclick="appendToDisplay('6')">6</button>
+            <button class="operator" onclick="appendToDisplay('-')">-</button>
+            <button onclick="calculateCube()">x³</button>
+            <button onclick="calculateCubeRoot()">³√</button>
+        </div>
+
+        <div>
+            <button onclick="appendToDisplay('7')">7</button>
+            <button onclick="appendToDisplay('8')">8</button>
+            <button onclick="appendToDisplay('9')">9</button>
+            <button class="operator" onclick="appendToDisplay('*')">*</button>
+            <button onclick="calculateSin()">sin</button>
+            <button onclick="calculateCos()">cos</button>
+        </div>
+
+        <div>
+            <button onclick="appendToDisplay('0')">0</button>
+            <button onclick="clearDisplay()">C</button>
+            <button class="equal" onclick="calculate()">=</button>
+            <button class="operator" onclick="appendToDisplay('/')">/</button>
+            <button onclick="toggleDegree()">Degree</button>
+        </div>
+    </div>
+
+    <script>
+        var useDegrees = false;
+
+        function appendToDisplay(value) {
+            document.getElementById('display').value += value;
+        }
+
+        function clearDisplay() {
+            document.getElementById('display').value = '';
+        }
+
+        function calculate() {
+            try {
+                var expression = document.getElementById('display').value;
+
+                if (useDegrees) {
+                    expression = expression.replace(/sin|cos/g, function(match) {
+                        return 'Math.' + match + '*(Math.PI/180)';
+                    });
+                }
+
+                document.getElementById('display').value = eval(expression);
+            } catch (error) {
+                document.getElementById('display').value = 'Error';
+            }
+        }
+
+        function calculateSquare() {
+            document.getElementById('display').value = Math.pow(eval(document.getElementById('display').value), 2);
+        }
+
+        function calculateSquareRoot() {
+            document.getElementById('display').value = Math.sqrt(eval(document.getElementById('display').value));
+        }
+
+        function calculateCube() {
+            document.getElementById('display').value = Math.pow(eval(document.getElementById('display').value), 3);
+        }
+
+        function calculateCubeRoot() {
+            document.getElementById('display').value = Math.cbrt(eval(document.getElementById('display').value));
+        }
+
+        function calculateSin() {
+            document.getElementById('display').value = useDegrees ?
+                Math.sin(eval(document.getElementById('display').value) * (Math.PI / 180)) :
+                Math.sin(eval(document.getElementById('display').value));
+        }
+
+        function calculateCos() {
+            document.getElementById('display').value = useDegrees ?
+                Math.cos(eval(document.getElementById('display').value) * (Math.PI / 180)) :
+                Math.cos(eval(document.getElementById('display').value));
+        }
+
+        function toggleDegree() {
+            useDegrees = !useDegrees;
+        }
+    </script>
+
+</body>
+</html>
