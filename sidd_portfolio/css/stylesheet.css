@@ -1,0 +1,314 @@
+*{
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    
+    background-color:lightblue;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/*header section------------------------------header--------------start----------------- */
+
+div.header {
+    padding: 14px 16px;
+    text-align: center;
+    font-weight: bolder;
+    text-shadow: 2px 2px white;
+    height: 10%;
+    color: black;
+    letter-spacing: 2px;
+    background-color: rgba(128, 128, 128, 0.507);
+}
+
+/*header section------------------------header section----end-------------------------------*/
+
+/*navigation bar-----------------------------navigation bar start--------------------------------*/
+
+button{
+    margin-top: 10px;
+    font-weight: bold;
+    margin-left: 5%;
+    padding: 14px;
+    border-radius: 1% 50%;
+}
+button:hover{
+    border: none;
+    box-shadow: 2px  2px rgb(57, 56, 57);
+    background-color:  rgb(8, 6, 6);
+}
+.navbar a{
+    color: white;
+    padding: 10px 12px;
+    text-decoration: none;
+    text-align: center;
+}
+.navbar a:hover{
+    font-size: larger;
+    font-weight: bolder;
+    color: rgb(244, 15, 53);
+}
+
+/* navigation bar -----------------------navigation bar end---------------------------------*/
+
+/*home section--------------------------------home section start------------------------*/
+
+#section1 {
+    background-color: lightblue; 
+}
+
+.aboutme {
+    background-color: rgba(128, 128, 128, 0.507);
+    margin-top: 1px;
+    font-weight: bolder;
+    padding: 14px 16px;
+    text-shadow: 2px 2px  white;
+    text-align: center;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+p.myself {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+}
+
+div.gallery {
+    margin: 5px;
+    float: left;
+    width: 350px;
+    border-radius: 50%;
+    transition: 2s;    
+}
+
+div.gallery:hover {
+    
+    box-shadow: 5px 5px 5px rgb(126, 205, 253); 
+    width: 450px;
+}
+
+div.gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+}
+
+div.desc {
+    padding: 1px;
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+/*home section end----------------------------home-section end------------------------------*/
+
+/*project section start--------------------------projectsection start--------------------------------*/
+
+#section2 {
+    background-color: lightskyblue;
+}
+
+h1.project
+{
+    background-color: rgba(128, 128, 128, 0.507);
+    text-align: center;
+    font-weight: bolder;
+    padding: 14px 16px;
+    text-shadow: 2px 2px white;
+    margin-top: 1px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+ul.projectsection {
+    list-style-type: none;
+}
+
+ul.projectsection li a {
+    text-decoration: none;
+    color: black;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+ul.projectsection li a:hover {
+    font-size: larger;
+    font-weight: bolder;
+}
+
+/*project section end--------------------------projectsection end--------------------------------*/
+
+
+/*Achievement section----------------------------achievement section start-----------------------*/
+
+#section3 {
+    background-color: lightblue;
+    height: 1200px;
+}
+
+h1.achievement {
+    text-shadow: 2px 2px white;
+    font-weight: bolder;
+    background-color: rgba(128, 128, 128, 0.507);
+    margin-top: 1px;
+    padding: 14px 16px;
+    text-align: center;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.achievementsection {
+    list-style-type: none;
+    padding: 20px;
+    margin-left: 20px;
+}
+
+div.gallery1 {
+    margin: 5px;
+    float: left;
+    width: 300px;
+    height: 200px;
+    border-radius: 5px;
+    border: 2px dashed;
+    overflow: hidden;
+}
+
+div.gallery1:hover {
+    transition: 2s;
+    font-family: 'Times New Roman', Times, serif;
+    box-shadow: 5px 5px 5px rgb(126, 205, 253); 
+    width: 350px;
+    height: 250px;
+}
+
+div.gallery1 img {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+
+/*Achievement section----------------------------achievement section end-----------------------*/
+
+/*contact-------------------------------------contact section start-------------------------------------*/
+
+#section4 {
+    background-color: lightskyblue;
+}
+
+h1.contactdetail {
+    background-color: rgba(128, 128, 128, 0.507);
+    margin-top: 1px;
+    font-weight: bolder;
+    text-shadow: 2px 2px white;
+    padding: 14px 16px;
+    text-align: center;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+div.socialapp {
+    color: black;
+}
+
+ul.socialmedia {
+    list-style-type: none;
+    font-size: larger;
+    font-weight:lighter;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+h2.social{
+    text-shadow: 2px 2px 2px;
+    font-weight:lighter;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+ul.socialmedia li a {
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+    word-spacing: normal;
+    font-size: large;
+    font-weight: bold;
+}
+
+.row {
+    color: black;
+}
+.leftcolumn{
+    float: left;
+    margin-top: 10%;
+    width: 40%;
+}
+
+.rightcolumn{
+    float: left;
+    width: 60%;
+    margin-top: 11%;
+    text-align: center;
+    font-size: larger;
+    font-weight: bolder;
+
+}
+.row::after{
+    content: " ";
+    display: table;
+    clear: both;
+}
+
+fieldset{
+    box-shadow: 3px 3px 3px lightblue;
+}
+
+
+/*contact-------------------------------------contact section end-------------------------------------*/
+
+/*footer-------------------------------------footer section-------------------------------------*/
+div.footer{
+    background-color: black;
+    color: white;
+}
+
+@media screen and (min-width: 320px) {
+    body {
+        margin: 0;
+        padding: 0;
+        content: normal;
+    }
+    div.gallery {
+        
+        width: 250px;
+    }
+    div.gallery:hover {
+    
+        box-shadow: 5px 5px 5px rgb(126, 205, 253); 
+        width: 450px;
+    }
+    
+    div.gallery1 {
+        width: 250px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+.leftcolumnzz , .rightcolumnzz{
+    width: 100%;
+    padding: 5px;
+    margin-top: 10px;
+}
+body{
+    background-color: rgba(105, 105, 105, 0.13);
+}
+
+.leftcolumn {
+    width: 100%;
+    padding: 0;
+}
+.rightcolumn {
+    width: 100%;
+}
+
+}
+
+
+
