@@ -19,7 +19,7 @@
         }
 
         #calculator {
-            background-color: rgba(5, 5, 5, 0.95);
+            background-color: rgba(5, 5, 5, 0.594);
             border-radius: 10px;
             box-shadow: 5px 5px rgba(0, 0, 0, 0.695);
             padding: 20px;
@@ -43,10 +43,13 @@
             font-size: 16px;
             cursor: pointer;
             border: none;
-            border-radius: 50%;
+            border-radius: 25% 25%;
         }
         button:hover {
-            border: 2px solid rgb(252, 251, 251);
+            border: 2px solid rgb(36, 36, 36);
+            background-color: aliceblue;
+            color: black;
+            font-size: large;
         }
 
         button.operator {
@@ -85,20 +88,13 @@
 
     <div id="calculator">
         
-        <input type="text" id="display" readonly>
+        <input type="text" id="display" readonly placeholder="Your calci...">
 
         <div>
-            <button class="operator" onclick="calculateSquare()">x²</button>
-            <button class="operator" onclick="calculateSquareRoot()">√</button>
-            <button class="operator" onclick="calculateCube()">x³</button>
-            <button class="clear" onclick="clearDisplay()">C</button>
-            
-        </div>
-        <div>
-            <button class="operator" onclick="calculateSin()">sin</button>
-            <button class="operator" onclick="calculateCos()">cos</button>
+            <button class="decimal" onclick="appendToDisplay('.')"><b style="display: content;">.</b></button>
             <button class="operator percentage" onclick="calculatePercentage()">%</button>
             <button class="operator multiplication" onclick="appendToDisplay('/')">/</button>
+            <button class="clear" onclick="clearDisplay()">AC</button>
         </div>
         <div>
             <button onclick="appendToDisplay('7')">7</button>
